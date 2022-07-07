@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         //Categories
-        \App\Models\Categories::factory(5)->create()->each(function($Category) {
+        \App\Models\Categories::factory(500)->create()->each(function($Category) {
             $randomCategories = \App\Models\Categories::all()->random(rand(1,1))->pluck('id')->first();
             $array  = ['0']; // main Category,  
             array_push($array, $randomCategories);
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         });
         
         //Products
-        \App\Models\Products::factory(50)->create()
+        \App\Models\Products::factory(5000)->create()
         ->each(function($product) {
             $randomCategories = \App\Models\Categories::all()->random(rand(1,1))->pluck('id')->first();
             $product->category_id =$randomCategories ;
