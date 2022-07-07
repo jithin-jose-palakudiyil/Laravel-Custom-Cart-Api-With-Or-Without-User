@@ -148,7 +148,7 @@ class CartController extends Controller
             ]);
             $cart->delete(); // cart delete
             return response()->json([
-                'message' => 'you\'re order has been completed succefully, thanks for shopping with us!',
+                'message' => 'you\'re order has been completed successfully, thanks for shopping with us!',
                 'orderID' => $order->id,
             ], 200);
         else: 
